@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6a90068-ce88-41b2-9d0a-742456bee9d7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/AdventOfCode2023.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day1.py" afterDir="false" />
-    </list>
+    <list default="true" id="c6a90068-ce88-41b2-9d0a-742456bee9d7" name="Changes" comment="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Learned a bit more about Regexp, practice with using lists." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,12 +78,25 @@
       <option name="presentableId" value="Default" />
       <updated>1723741108977</updated>
       <workItem from="1723741110595" duration="5311000" />
-      <workItem from="1723752600202" duration="1117000" />
+      <workItem from="1723752600202" duration="1500000" />
     </task>
+    <task id="LOCAL-00001" summary="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Learned a bit more about Regexp, practice with using lists.">
+      <option name="closed" value="true" />
+      <created>1723754084913</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723754084913</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Learned a bit more about Regexp, practice with using lists." />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Learned a bit more about Regexp, practice with using lists." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -106,6 +111,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdventOfCode2023$main.coverage" NAME="Day1 Coverage Results" MODIFIED="1723750046005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day1.coverage" NAME="Day1 Coverage Results" MODIFIED="1723753693562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day1.coverage" NAME="Day1 Coverage Results" MODIFIED="1723753972707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

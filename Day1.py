@@ -1,4 +1,6 @@
 import re
+import time
+
 
 def day1(input_array):
     result = 0
@@ -12,7 +14,7 @@ def day1(input_array):
                           "seven": "7",
                           "eight": "8",
                           "nine": "9"}
-    # create regexp string to search on using the keys TODO: I am sure this could be made easier to look at
+    # create regexp string to search on using the keys
     re_string = "(?=("
     for item in list(letters_to_numbers.keys()):
         re_string += item + "|"
@@ -35,7 +37,6 @@ def day1(input_array):
             second_digit = int(letters_to_numbers[match_list[-1]])
 
         line_answer = first_digit * 10 + second_digit
-        print(line_answer)
         result = result + line_answer
 
     return result
@@ -52,6 +53,7 @@ def read_file_to_list(filename):
 def main():
     print("Advent of Code Day 1")
 
+    start = time.time()
     input_array = read_file_to_list("InputFiles/input-day1.txt")
 
     test_input_array = ["two1nine",
@@ -65,6 +67,9 @@ def main():
                         "twonethreeight"]
 
     print(day1(input_array))
+    end = time.time()
+
+    print(f"{end-start:.3f} seconds")
 
 
 # Press the green button in the gutter to run the script.
