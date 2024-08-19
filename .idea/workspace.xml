@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6a90068-ce88-41b2-9d0a-742456bee9d7" name="Changes" comment="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Learned a bit more about Regexp, practice with using lists." />
+    <list default="true" id="c6a90068-ce88-41b2-9d0a-742456bee9d7" name="Changes" comment="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Tied up code, added a timer.">
+      <change afterPath="$PROJECT_DIR$/Day2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Day4.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +16,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "thecesspit"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/thecesspit/AdventOfCode2023.git",
+    "accountId": "345d93a3-1fe6-403c-9a9e-a9228b51cf32"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -22,20 +37,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Day1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Day1.executor": "Run",
+    "Python.Day2.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/rchris/PycharmProjects/AdventOfCode2023",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rchris\PycharmProjects\AdventOfCode2023" />
+      <recent name="C:\Users\rchris\PycharmProjects\AdventOfCode2023\InputFiles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rchris\PycharmProjects\AdventOfCode2023" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Day1" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="AdventOfCode2023" />
@@ -78,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1723741108977</updated>
       <workItem from="1723741110595" duration="5311000" />
-      <workItem from="1723752600202" duration="1500000" />
+      <workItem from="1723752600202" duration="6990000" />
     </task>
     <task id="LOCAL-00001" summary="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Learned a bit more about Regexp, practice with using lists.">
       <option name="closed" value="true" />
@@ -88,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723754084913</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Tied up code, added a timer.">
+      <option name="closed" value="true" />
+      <created>1723756135403</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1723756135403</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,14 +130,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Learned a bit more about Regexp, practice with using lists." />
-    <option name="LAST_COMMIT_MESSAGE" value="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Learned a bit more about Regexp, practice with using lists." />
+    <MESSAGE value="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Tied up code, added a timer." />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Tied up code, added a timer." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Day1.py</url>
-          <line>2</line>
+          <line>4</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -111,6 +146,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdventOfCode2023$main.coverage" NAME="Day1 Coverage Results" MODIFIED="1723750046005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day1.coverage" NAME="Day1 Coverage Results" MODIFIED="1723753972707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day2.coverage" NAME="Day2 Coverage Results" MODIFIED="1723759671950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day1.coverage" NAME="Day1 Coverage Results" MODIFIED="1723756296541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
