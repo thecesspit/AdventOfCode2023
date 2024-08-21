@@ -47,16 +47,6 @@ def day5_parser(input_array):
 
     return seed_list, new_map
 
-def seed_map_lookup(seed_map, value):
-    # seed map is of form (range(start, end), change) - e.g ((50,98),2) => 51 -> 53
-    destination = -1
-    for item in seed_map:
-        if value in seed_map[item][0]:
-            destination = value + seed_map[item][1]
-    if destination == -1:
-        destination = value
-    return destination
-
 
 def day5(seed_list, seed_map):
     # Take a list of seeds and converted them through each level of the map to get the final location
@@ -67,40 +57,100 @@ def day5(seed_list, seed_map):
         seed_transforms = []
         for level in seed_map:
             for transform in level:
-                if result_seed in transform[0]:
-                    result_seed = result_seed + transform[1]
+                if transform[0] < result_seed < transform[1]:
+                    result_seed = result_seed + transform[2]
                     seed_transforms.append(result_seed)
                     break
         location_list.append(result_seed)
     return min(location_list)
 
 
-def day5_part2(seed_list, seed_map):
+def day5_part2(seed_range_list, seed_map):
 
     # for each pair in the seed_list create a temp seed list to pass back into day 5; and get the lowest location
     # then find the lowest location for all lowest
 
     location_list = []
+    work_list = []
+    # Initialize our list of seeds:
+    for seed in seed_range_list:
+        seed.append(0)
+    print("Seed Range is")
+    print(seed_range_list)
+    work_list = seed_range_list
+
+    # loop around until our seed work list empty:
+    while work_list:
+        t_found = False
+        current_work = work_list.pop()
+        level = current_work[2]
+        print(f"Work {current_work}")
+        if level == 7:
+            location_list.append(current_work)
+        else:
+            for transform in seed_map[level]:
+                modifier = transform[2]
+                if current_work[0] == 1054656969 :
+                    True
+                if current_work[0] >= transform[0] and current_work[1] <= transform[1]:
+                    # seed range is entirely within the transform
+                    work_list.append([current_work[0] + modifier, current_work[1] + modifier, level + 1])
+                    t_found = True
+                    break
+                if transform[0] <= current_work[0] < transform[1] < current_work[1]:
+                    # Transform starts inside the transform and ends out side it, we need to split our seed
+                    # first take the section inside and modify it
+                    work_list.append([current_work[0] + modifier, transform[1] + modifier, level + 1])
+                    # then take the section outside as a new work item at this level:
+                    work_list.append([transform[1] + 1, current_work[1], level])
+                    t_found = True
+                    break
+                if transform[1] > current_work[1] >= transform[0] > current_work[0]:
+                    # Transform starts outside the transform and ends inside it, we need to split our seed
+                    # first take the section inside and modify it
+                    work_list.append([transform[0] + modifier, current_work[1] + modifier, level + 1])
+                    # then take the section outside as a new work item at this level:
+                    work_list.append([current_work[0], transform[0] - 1, level])
+                    t_found = True
+                    break
+                if current_work[0] < transform[0] and current_work [1] > transform[1]:
+                    # work is bigger than the transform
+                    # take the section inside
+                    work_list.append([transform[0] + modifier, transform[1] + modifier, level + 1])
+                    work_list.append([current_work[0], transform[0] - 1, level])
+                    work_list.append([transform[1] + 1, current_work[1], level])
+                    t_found = True
+                    break
+            if not t_found:
+                # No transform find, so we can move forward to the next level
+               work_list.append([current_work[0], current_work[1], level + 1])
+    print(location_list)
+    result = min([item[0] for item in location_list])
+
+    return result
+
+
+def seed_range_convertor(seed_list):
+    # take a list of seeds and convert them into the range they represent for the Day 2 problem
+    seed_range_list = []
 
     seed_pairs = int(len(seed_list)/2)
     for x in range(seed_pairs):
         seed_range = seed_list[x*2 + 1]
         seed_start = seed_list[x*2]
-        print(f"Processing {seed_start} over {seed_range}")
-        for seed in range(seed_start, seed_range):
-            print(seed)
-            True
-    return (location_list)
+        seed_range_list.append([seed_start, seed_start + seed_range])
+
+    return seed_range_list
 
 
 def seed_map_convertor(seed_map):
-    # converts a seed map into a range / change
+    # converts a seed map into a lower, upper and change
     new_seed_map = []
     for i in seed_map:
         new_list = []
         for item in seed_map[i]:
             # Python ranges don't include the last number
-            new_list.append([range(item[1], item[1] + item[2]), item[0] - item[1]])
+            new_list.append([item[1], item[1] + item[2] - 1, item[0] - item[1]])
         new_seed_map.append(new_list)
 
     return new_seed_map
@@ -115,16 +165,19 @@ def main():
 
     print("Part 1")
     seed_list, parsed_map = day5_parser(input_array)
+    # Convert our seed map to a range with modifier for all integers in that range.
     converted_map = seed_map_convertor(parsed_map)
-    # create an ugly list
     print("Seed List")
     print(seed_list)
-    print("\n Seed/Location Map")
+    print("\nSeed/Location Map")
     for value, item in enumerate(converted_map):
         print(value, item)
     print(f"Minimum Location is: {day5(seed_list, converted_map)}")
+
+    # For part 2
     print("\n Part 2")
-    print(f"Minimum Location is: {day5_part2(seed_list, parsed_map)}")
+    seed_range_list = seed_range_convertor(seed_list)
+    print(f"Minimum Location is: {day5_part2(seed_range_list, converted_map)}")
     end = time.time()
 
     print(f"{end-start:.3f} seconds")
