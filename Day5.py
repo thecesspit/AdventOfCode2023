@@ -88,6 +88,7 @@ def day5_part2(seed_list, seed_map):
         seed_start = seed_list[x*2]
         print(f"Processing {seed_start} over {seed_range}")
         for seed in range(seed_start, seed_range):
+            print(seed)
             True
     return (location_list)
 
