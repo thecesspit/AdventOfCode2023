@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6a90068-ce88-41b2-9d0a-742456bee9d7" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
+    <list default="true" id="c6a90068-ce88-41b2-9d0a-742456bee9d7" name="Changes" comment="Added day5 challenge - had to work out how to slice lists, and then use ranges or tuples to compare.&#10;&#10;Must be a better way to slice two ranges into more dependent on overlap, but didn't find it.">
+      <change afterPath="$PROJECT_DIR$/Day6.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InputFiles/input_day6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InputFiles/input_day6_part2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day5.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day5.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +45,12 @@
     "Python.Day1.executor": "Run",
     "Python.Day2.executor": "Run",
     "Python.Day4.executor": "Run",
-    "Python.Day5.executor": "Debug",
+    "Python.Day5.executor": "Run",
+    "Python.Day6.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/rchris/PycharmProjects/AdventOfCode2023",
+    "last_opened_file_path": "C:/Users/rchris/PycharmProjects/AdventOfCode2023/InputFiles",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,8 +62,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\rchris\PycharmProjects\AdventOfCode2023" />
       <recent name="C:\Users\rchris\PycharmProjects\AdventOfCode2023\InputFiles" />
+      <recent name="C:\Users\rchris\PycharmProjects\AdventOfCode2023" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\rchris\PycharmProjects\AdventOfCode2023" />
@@ -111,7 +114,7 @@
       <workItem from="1723752600202" duration="6990000" />
       <workItem from="1724086543705" duration="3736000" />
       <workItem from="1724178641353" duration="25394000" />
-      <workItem from="1724271415910" duration="8036000" />
+      <workItem from="1724271415910" duration="11877000" />
     </task>
     <task id="LOCAL-00001" summary="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Learned a bit more about Regexp, practice with using lists.">
       <option name="closed" value="true" />
@@ -185,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724259413452</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added day5 challenge - had to work out how to slice lists, and then use ranges or tuples to compare.&#10;&#10;Must be a better way to slice two ranges into more dependent on overlap, but didn't find it.">
+      <option name="closed" value="true" />
+      <created>1724281682821</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1724281682821</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +249,8 @@
     <MESSAGE value="Day 4 of advent of code.&#10;Learned more about list comprehension, but still need to work on it a bit more." />
     <MESSAGE value="Day 5 of advent of code.&#10;More looping over maps and understanding ranges better (last value is exclusive, not inclusive)." />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
+    <MESSAGE value="Added day5 challenge - had to work out how to slice lists, and then use ranges or tuples to compare.&#10;&#10;Must be a better way to slice two ranges into more dependent on overlap, but didn't find it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added day5 challenge - had to work out how to slice lists, and then use ranges or tuples to compare.&#10;&#10;Must be a better way to slice two ranges into more dependent on overlap, but didn't find it." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -253,14 +265,19 @@
           <line>93</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Day6.py</url>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdventOfCode2023$main.coverage" NAME="Day1 Coverage Results" MODIFIED="1723750046005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day6.coverage" NAME="Day6 Coverage Results" MODIFIED="1724352864089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AdventOfCode2023$Day2.coverage" NAME="Day2 Coverage Results" MODIFIED="1723759671950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AdventOfCode2023$Day4.coverage" NAME="Day4 Coverage Results" MODIFIED="1724090004996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day5.coverage" NAME="Day5 Coverage Results" MODIFIED="1724281318677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day5.coverage" NAME="Day5 Coverage Results" MODIFIED="1724281588144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AdventOfCode2023$Day1.coverage" NAME="Day1 Coverage Results" MODIFIED="1724271449006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
