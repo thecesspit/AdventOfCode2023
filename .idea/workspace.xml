@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6a90068-ce88-41b2-9d0a-742456bee9d7" name="Changes" comment="Added day 6.&#10;&#10;Much simpler - did part 2 by brute force, suspect there's a quicker way - I know I could easily half the time taken by the mirroring effect of the timings, but felt wasn't needed as it completed in 5s.">
-      <change afterPath="$PROJECT_DIR$/Day7.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InputFiles/input_day7.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InputFiles/input_day7_test.txt" afterDir="false" />
+    <list default="true" id="c6a90068-ce88-41b2-9d0a-742456bee9d7" name="Changes" comment="Added day 8&#10;&#10;More work on understanding dictionaries and calling elements of a dictionary, getting lists with an index.  Actual algorithm was pretty simple when based on the right data structure.&#10;&#10;For part 2, assumed each ghost was on a long loop and then took the LCM of all the routes.  I didn't check the assumption they were valid loops - but turns out the answer was right - the 10e12 steps would have taken for ever to run as a group.">
+      <change afterPath="$PROJECT_DIR$/Day8.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InputFiles/input_day8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InputFiles/input_day8_test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +17,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -48,10 +47,11 @@
     "Python.Day5.executor": "Run",
     "Python.Day6.executor": "Run",
     "Python.Day7.executor": "Run",
+    "Python.Day8.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/rchris/PycharmProjects/AdventOfCode2023/InputFiles",
+    "last_opened_file_path": "C:/Users/rchris/PycharmProjects/AdventOfCode2023",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,14 +63,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\rchris\PycharmProjects\AdventOfCode2023\InputFiles" />
       <recent name="C:\Users\rchris\PycharmProjects\AdventOfCode2023" />
+      <recent name="C:\Users\rchris\PycharmProjects\AdventOfCode2023\InputFiles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\rchris\PycharmProjects\AdventOfCode2023" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Day8">
     <configuration name="Day1" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="AdventOfCode2023" />
       <option name="ENV_FILES" value="" />
@@ -94,6 +94,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Day8" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AdventOfCode2023" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Day8.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Day8" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -116,7 +144,8 @@
       <workItem from="1724086543705" duration="3736000" />
       <workItem from="1724178641353" duration="25394000" />
       <workItem from="1724271415910" duration="12540000" />
-      <workItem from="1724693455169" duration="5704000" />
+      <workItem from="1724693455169" duration="6565000" />
+      <workItem from="1724799276591" duration="6240000" />
     </task>
     <task id="LOCAL-00001" summary="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Learned a bit more about Regexp, practice with using lists.">
       <option name="closed" value="true" />
@@ -206,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724354698667</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added day 7.&#10;&#10;Needed to some parsings to rank the hands; used replacement values so the ordering would work, rather than devising soemthign that looked at the values against a rank list. Learned a bit about sort() and list.indexI()">
+      <option name="closed" value="true" />
+      <created>1724703804259</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1724703804259</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +298,9 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="Added day5 challenge - had to work out how to slice lists, and then use ranges or tuples to compare.&#10;&#10;Must be a better way to slice two ranges into more dependent on overlap, but didn't find it." />
     <MESSAGE value="Added day 6.&#10;&#10;Much simpler - did part 2 by brute force, suspect there's a quicker way - I know I could easily half the time taken by the mirroring effect of the timings, but felt wasn't needed as it completed in 5s." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added day 6.&#10;&#10;Much simpler - did part 2 by brute force, suspect there's a quicker way - I know I could easily half the time taken by the mirroring effect of the timings, but felt wasn't needed as it completed in 5s." />
+    <MESSAGE value="Added day 7.&#10;&#10;Needed to some parsings to rank the hands; used replacement values so the ordering would work, rather than devising soemthign that looked at the values against a rank list. Learned a bit about sort() and list.indexI()" />
+    <MESSAGE value="Added day 8&#10;&#10;More work on understanding dictionaries and calling elements of a dictionary, getting lists with an index.  Actual algorithm was pretty simple when based on the right data structure.&#10;&#10;For part 2, assumed each ghost was on a long loop and then took the LCM of all the routes.  I didn't check the assumption they were valid loops - but turns out the answer was right - the 10e12 steps would have taken for ever to run as a group." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added day 8&#10;&#10;More work on understanding dictionaries and calling elements of a dictionary, getting lists with an index.  Actual algorithm was pretty simple when based on the right data structure.&#10;&#10;For part 2, assumed each ghost was on a long loop and then took the LCM of all the routes.  I didn't check the assumption they were valid loops - but turns out the answer was right - the 10e12 steps would have taken for ever to run as a group." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -291,6 +330,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdventOfCode2023$main.coverage" NAME="Day1 Coverage Results" MODIFIED="1723750046005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AdventOfCode2023$Day6.coverage" NAME="Day6 Coverage Results" MODIFIED="1724352864089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day8.coverage" NAME="Day8 Coverage Results" MODIFIED="1724862269774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AdventOfCode2023$Day2.coverage" NAME="Day2 Coverage Results" MODIFIED="1723759671950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AdventOfCode2023$Day7.coverage" NAME="Day7 Coverage Results" MODIFIED="1724703644645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AdventOfCode2023$Day4.coverage" NAME="Day4 Coverage Results" MODIFIED="1724090004996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
