@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6a90068-ce88-41b2-9d0a-742456bee9d7" name="Changes" comment="Day 9 Added&#10;&#10;This meant playing with lists of lists, and using [-1] notation to find the last item in a list.&#10;&#10;insert(0,x) was used to prepend to a list.&#10;&#10;Hard part was discovering lists are generally passed by reference - so part 1 was altering our original analysis list we created, so repeating the work again for part 2 gave a different answer. &#10;&#10;list.copy() solves for this.  As would have resetting the list and reading in a second time.">
-      <change afterPath="$PROJECT_DIR$/Day11.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InputFiles/input_day11.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InputFiles/input_day11_test.txt" afterDir="false" />
+    <list default="true" id="c6a90068-ce88-41b2-9d0a-742456bee9d7" name="Changes" comment="Day 11 Added&#10;First version used a real grid for all the galaxiues and expanded it then did the search to fidn the co-ordinates.  worked fine for an age 1 galaxy, but not when adding millions of NULL rows.&#10;&#10;Instead, found all the galaxy co-ordinates first, then worked out which rows/columns were empty; and then added to the x/y of the galaxies for each row/column below it that was empty.&#10;&#10;Works fast - slightly odd off by one error for calculating the new locations - haven't debugged it completely but probably something to do with calculation of new location.">
+      <change afterPath="$PROJECT_DIR$/Day15.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Day18.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InputFiles/input_day15.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InputFiles/input_day15_test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InputFiles/input_day18.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InputFiles/input_day18_test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,30 +48,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Day1.executor": "Run",
-    "Python.Day11.executor": "Run",
-    "Python.Day2.executor": "Run",
-    "Python.Day4.executor": "Run",
-    "Python.Day5.executor": "Run",
-    "Python.Day6.executor": "Run",
-    "Python.Day7.executor": "Run",
-    "Python.Day8.executor": "Run",
-    "Python.Day9.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/rchris/PycharmProjects/AdventOfCode2023",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "application.passwordSafe",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Day1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day11.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day15.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day18.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day5.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day6.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day7.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day8.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day9.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/rchris/PycharmProjects/AdventOfCode2023&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;application.passwordSafe&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rchris\PycharmProjects\AdventOfCode2023" />
@@ -154,7 +159,10 @@
       <workItem from="1724271415910" duration="12540000" />
       <workItem from="1724693455169" duration="6565000" />
       <workItem from="1724799276591" duration="12872000" />
-      <workItem from="1725572395516" duration="9416000" />
+      <workItem from="1725572395516" duration="9980000" />
+      <workItem from="1726181812811" duration="20688000" />
+      <workItem from="1726696768212" duration="5554000" />
+      <workItem from="1726769096246" duration="2900000" />
     </task>
     <task id="LOCAL-00001" summary="Set up and Day 1 of Advent of Code 2023 in Python.&#10;Learned a bit more about Regexp, practice with using lists.">
       <option name="closed" value="true" />
@@ -268,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724966190168</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Day 11 Added&#10;First version used a real grid for all the galaxiues and expanded it then did the search to fidn the co-ordinates.  worked fine for an age 1 galaxy, but not when adding millions of NULL rows.&#10;&#10;Instead, found all the galaxy co-ordinates first, then worked out which rows/columns were empty; and then added to the x/y of the galaxies for each row/column below it that was empty.&#10;&#10;Works fast - slightly odd off by one error for calculating the new locations - haven't debugged it completely but probably something to do with calculation of new location.">
+      <option name="closed" value="true" />
+      <created>1725646668216</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1725646668216</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,7 +342,8 @@
     <MESSAGE value="Added day 7.&#10;&#10;Needed to some parsings to rank the hands; used replacement values so the ordering would work, rather than devising soemthign that looked at the values against a rank list. Learned a bit about sort() and list.indexI()" />
     <MESSAGE value="Added day 8&#10;&#10;More work on understanding dictionaries and calling elements of a dictionary, getting lists with an index.  Actual algorithm was pretty simple when based on the right data structure.&#10;&#10;For part 2, assumed each ghost was on a long loop and then took the LCM of all the routes.  I didn't check the assumption they were valid loops - but turns out the answer was right - the 10e12 steps would have taken for ever to run as a group." />
     <MESSAGE value="Day 9 Added&#10;&#10;This meant playing with lists of lists, and using [-1] notation to find the last item in a list.&#10;&#10;insert(0,x) was used to prepend to a list.&#10;&#10;Hard part was discovering lists are generally passed by reference - so part 1 was altering our original analysis list we created, so repeating the work again for part 2 gave a different answer. &#10;&#10;list.copy() solves for this.  As would have resetting the list and reading in a second time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 9 Added&#10;&#10;This meant playing with lists of lists, and using [-1] notation to find the last item in a list.&#10;&#10;insert(0,x) was used to prepend to a list.&#10;&#10;Hard part was discovering lists are generally passed by reference - so part 1 was altering our original analysis list we created, so repeating the work again for part 2 gave a different answer. &#10;&#10;list.copy() solves for this.  As would have resetting the list and reading in a second time." />
+    <MESSAGE value="Day 11 Added&#10;First version used a real grid for all the galaxiues and expanded it then did the search to fidn the co-ordinates.  worked fine for an age 1 galaxy, but not when adding millions of NULL rows.&#10;&#10;Instead, found all the galaxy co-ordinates first, then worked out which rows/columns were empty; and then added to the x/y of the galaxies for each row/column below it that was empty.&#10;&#10;Works fast - slightly odd off by one error for calculating the new locations - haven't debugged it completely but probably something to do with calculation of new location." />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 11 Added&#10;First version used a real grid for all the galaxiues and expanded it then did the search to fidn the co-ordinates.  worked fine for an age 1 galaxy, but not when adding millions of NULL rows.&#10;&#10;Instead, found all the galaxy co-ordinates first, then worked out which rows/columns were empty; and then added to the x/y of the galaxies for each row/column below it that was empty.&#10;&#10;Works fast - slightly odd off by one error for calculating the new locations - haven't debugged it completely but probably something to do with calculation of new location." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -354,15 +371,17 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day8.coverage" NAME="Day8 Coverage Results" MODIFIED="1724951054170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day2.coverage" NAME="Day2 Coverage Results" MODIFIED="1723759671950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day15.coverage" NAME="Day15 Coverage Results" MODIFIED="1726506520845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day4.coverage" NAME="Day4 Coverage Results" MODIFIED="1724090004996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day18.coverage" NAME="Day18 Coverage Results" MODIFIED="1726771942861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day5.coverage" NAME="Day5 Coverage Results" MODIFIED="1724281588144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day1.coverage" NAME="Day1 Coverage Results" MODIFIED="1726769940099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AdventOfCode2023$main.coverage" NAME="Day1 Coverage Results" MODIFIED="1723750046005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AdventOfCode2023$Day6.coverage" NAME="Day6 Coverage Results" MODIFIED="1724352864089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day8.coverage" NAME="Day8 Coverage Results" MODIFIED="1724951054170" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AdventOfCode2023$Day9.coverage" NAME="Day9 Coverage Results" MODIFIED="1724954892956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day11.coverage" NAME="Day11 Coverage Results" MODIFIED="1725646110270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day2.coverage" NAME="Day2 Coverage Results" MODIFIED="1723759671950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day11.coverage" NAME="Day11 Coverage Results" MODIFIED="1725646309288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AdventOfCode2023$Day7.coverage" NAME="Day7 Coverage Results" MODIFIED="1724703644645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day4.coverage" NAME="Day4 Coverage Results" MODIFIED="1724090004996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day5.coverage" NAME="Day5 Coverage Results" MODIFIED="1724281588144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AdventOfCode2023$Day1.coverage" NAME="Day1 Coverage Results" MODIFIED="1725572790996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
